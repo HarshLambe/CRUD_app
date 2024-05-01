@@ -1,0 +1,89 @@
+
+    <%- include('layout/partials/header') %>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card shadow">
+                    <div class="card-header bg-success">
+                        <h5 class="text-light">Edit User <%= user.name %></h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/update/<%= user._id %>" method="post" id="edit-form">
+                            <div class="mb-3">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter name" value="<%= user.name %>" required/>
+                            </div>
+                        <div class="mb-3">
+                <label class="form-label" for="id">ID</label>
+                <input  type="number" id="id" name="id" class="form-control form-control-lg" placeholder="Enter id" value="<%= user.id %>" required/> 
+                        </div>
+                            <div class="mb-3">
+                                <label for="regimentno">Regiment Number</label>
+                                <input type="text" name="regimentno" class="form-control form-control-lg" placeholder="Enter Regiment Number" value="<%= user.regimentno %>" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="year">Enrollment Year</label>
+                                 <input  type="number" id="year" name="year" class="form-control form-control-lg" placeholder="Enter Regiment Number" value="<%= user.year %>" required/> 
+                                 </div>
+                            <div class="mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter email" value="<%= user.email %>" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">Phone</label>
+                                <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Enter phone" value="<%= user.phone %>" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="bloodgroup">Blood Group</label>
+                                <input type="text" name="bloodgroup" class="form-control form-control-lg" placeholder="Enter Blood Group" value="<%= user.Bloodgroup %>" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gender">Gender</label>
+                                <select name="gender" class="form-select form-select-lg" required>
+                                    <option value="" disabled>Select Gender</option>
+                                    <option value="Male" <%= user.gender === 'Male' ? 'selected' : '' %>>Male</option>
+                                    <option value="Female" <%= user.gender === 'Female' ? 'selected' : '' %>>Female</option>
+                                    <option value="Other" <%= user.gender === 'Other' ? 'selected' : '' %>>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fathername">Father's Name</label>
+                                <input type="text" name="fathername" class="form-control form-control-lg" placeholder="Enter Father's Name" value="<%= user.fathername %>"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mothername">Mother's Name</label>
+                                <input type="text" name="mothername" class="form-control form-control-lg" placeholder="Enter Mother's Name" value="<%= user.mothername %>"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="DOB">Date of Birth</label>
+                                <input type="date" name="DOB" class="form-control form-control-lg"  max="<%= new Date().toISOString().split('T')[0] %>"  value="<%= user.DOB %>"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="caste">Caste</label>
+                                <input type="text" name="caste" class="form-control form-control-lg" placeholder="Enter Caste" value="<%= user.caste %>"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address">Address</label>
+                                <textarea name="address" class="form-control form-control-lg" rows="3" placeholder="Enter Address"><%= user.Address %></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="parentmobno">Parent Mobile Number</label>
+                                <input type="tel" name="parentmobno" class="form-control form-control-lg" placeholder="Enter parent's mobile number" value="<%= user.parentmobno %>" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="aadharno">Aadhar Card Number</label>
+                                <input type="number" name="aadharno" class="form-control form-control-lg" placeholder="Enter Aadhar card number" value="<%= user.aadharno %>" required/>
+                            </div>
+                            
+                    
+                            <div class="mb-3">
+                                <input type="submit" name="submit" value="Update" class="btn btn-success btn-lg"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('layout/partials/footer') %>

@@ -1,0 +1,73 @@
+<%- include('layout/partials/header') %>
+<div class="container">
+    <div class="row my-4">
+        <div class="col-lg-12">
+            <% if (message) { %>
+                <div class="alert alert-dismissible fade show alert-<%= message.type %>" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <strong><%= message.message %></strong>
+                </div>
+            <% } %>
+            <div class="table-responsive">
+                <% if (users.length > 0) { %>
+                    <table class="table table-striped my-3">
+                        <thead>
+                            <tr class="table-dark text-center">
+                                <th>Id</th>
+                                <th>Regiment NO</th>
+                                <th>En Year</th>
+                             
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Bloodgroup</th>
+                                <th>gender</th>
+                                <th>fathername</th>
+                                <th>mothername</th>
+                                <th>DOB</th>
+                                <th>caste</th>
+                                <th>address</th>
+                                <th>parentno</th>
+                                <th>aadharno</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% users.forEach((row, index) => { %>
+                                <tr class="align-middle">
+                                    <td><%= row.id %></td>
+                                    <td><%=row.regimentno %></td>
+                                    <td><%=row.year %></td>
+                
+                                    <td><%= row.name %></td>
+                                    <td><%= row.email %></td>
+                                    <td><%=row.phone %></td>
+                                    <td><%= row.Bloodgroup %></td>
+                                    <td><%= row.gender %></td>
+                                    <td><%=row.fathername %></td>
+                                    <td><%=row.mothername %></td>
+                                    <td><%=row.DOB %></td>
+                                    <td><%=row.caste %></td>
+                                    <td><%=row. Address %></td>
+                                    <td><%=row.parentmobno %></td>
+                                    <td><%=row.aadharno %></td>
+    
+                                    
+                                    <td>
+                                        <a href="/edit/<%= row._id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                                        <a href="/delete/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                <% } else { %>
+                    <h1 class="text-center text-secondary mt-5">NO USERS IN DATABASE</h1>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('layout/partials/footer') %>

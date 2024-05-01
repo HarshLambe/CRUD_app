@@ -1,0 +1,130 @@
+<%- include('../layout/partials/header') %>
+
+<div class="row">
+    <h1 class="text-center">New Cadet Registration</h1>
+    <div class="col-6 offset-3">
+        <form action="/cadetform" method="POST"  novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="regimentno">Regiment Number</label>
+                <input class="form-control" type="text" id="regimentno" name="regimentno" required>
+   
+    <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="id">ID</label>
+                <input class="form-control" type="number" id="id" name="id" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="phone">Phone</label>
+                <input class="form-control" type="number" id="phone" name="phone" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="year">Enrollment Year</label>
+                 <input class="form-control" type="number" id="year" name="year" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+             <div class="mb-3">
+                <label class="form-label" for="bloodgroup">Blood Group</label>
+                <input class="form-control" type="text" id="bloodgroup" name="Bloodgroup" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="gender">Gender</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="" selected disabled>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div> 
+            <div class="mb-3">
+                <label class="form-label" for="aadharno">Aadhar Card Number</label>
+                <input class="form-control" type="number" id="aadharno" name="aadharno" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="parentmobno">Parent Mobile Number</label>
+                <input class="form-control" type="number" id="parentmobno" name="parentmobno" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="fathername">Father's Name</label>
+                <input class="form-control" type="text" id="fathername" name="fathername" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="mothername">Mother's Name</label>
+                <input class="form-control" type="text" id="mothername" name="mothername" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="DOB">Date of Birth</label>
+                <input type="date" name="DOB" class="form-control form-control-lg"  max="<%= new Date().toISOString().split('T')[0] %>"  required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+           
+            
+            <div class="mb-3">
+                <label class="form-label" for="caste">Caste</label>
+                <input class="form-control" type="text" id="caste" name="caste" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="address">Address</label>
+                <textarea class="form-control" id="address" name="Address" rows="3" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <!-- Additional fields can be added based on the schema provided -->
+
+            <div class="mb-3">
+                <button class="btn btn-success">Register Cadet</button>
+            </div>
+        </form>
+        <a href="/cadets">All Cadets</a>
+    </div>
+</div>
+<%- include('../layout/partials/footer') %>

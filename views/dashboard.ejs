@@ -1,0 +1,67 @@
+<%- include('layout/partials/header') %>
+
+<!-- Include Chart.js library -->
+<h1 class="text-center mb-4">Dashboard</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="card-title">Total Registrations:  <span class="badge bg-primary"><%= totalRegistrations %></span></h2>
+    </div>
+</div>
+<!-- Gender Distribution Chart -->
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="card-title">Gender Distribution</h2>
+        <canvas id="genderChart" width="400" height="100"></canvas>
+    </div>
+</div>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get gender distribution data from server
+       
+        const maleCountData = <%= maleRegistrations %>;
+        const femaleCountData = <%=  femaleRegistrations %>;
+
+        // Chart data
+        const chartData = {
+            labels: ['Gender'],
+            datasets: [
+                {
+                    label: 'Male', // Label for male dataset
+                    data: [maleCountData], // Data for male count
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)', // Blue color for male
+                    borderColor: 'rgba(54, 162, 235, 1)', // Solid border color for male
+                    borderWidth: 2, // Custom border width
+                },
+                {
+                    label: 'Female', // Label for female dataset
+                    data: [femaleCountData], // Data for female count
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)', // Red color for female
+                    borderColor: 'rgba(255, 99, 132, 1)', // Solid border color for female
+                    borderWidth: 2, // Custom border width
+                }
+            ]
+        };
+
+        const chartOptions = {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        };
+
+        // Render the bar chart
+        const ctx = document.getElementById('genderChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: chartOptions
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<%- include('layout/partials/footer') %>
