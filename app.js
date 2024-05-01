@@ -20,7 +20,7 @@ const { isLoggedIn, fetchChartData } = require('./middleware'); // Import the Ca
 const app = express();
 
 
-mongoose.connect("mongodb://localhost:27017/NCC_Regist", {});
+mongoose.connect("mongodb://localhost:27017/your database name", {});
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
@@ -36,7 +36,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
 
 const sessionConfig = {
-    secret: 'bettersecret!',
+    secret: give single inverted comma '' inside it give any secret key that u wanna use,
     resave: false,
     saveUninitialized: true,
     cookie: {
