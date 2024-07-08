@@ -20,7 +20,7 @@ const { isLoggedIn, fetchChartData } = require('./middleware'); // Import the Ca
 const app = express();
 
 
-mongoose.connect("mongodb://localhost:27017/your database name", {});
+mongoose.connect(MONGODB_CONNECTION_URI);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
