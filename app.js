@@ -96,7 +96,9 @@ app.use("", require('./routes copy/excel'));
 
 
 const Campground = require('./models/cadetreg'); // Assuming you have a model for campgrounds
-
+app.get('/',async(req,res)=>{
+    res.render('home');
+});
 app.get('/home', async (req, res) => {
     res.render('home');
 });
