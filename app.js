@@ -36,7 +36,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
 
 const sessionConfig = {
-    secret: give single inverted comma '' inside it give any secret key that u wanna use,
+    secret:  'hbhbhbhb',
     resave: false,
     saveUninitialized: true,
     cookie: {
