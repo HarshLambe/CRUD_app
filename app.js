@@ -15,7 +15,8 @@ const User = require('./models/user');
 const path = require("path");
 const flash = require('connect-flash');
 const { isLoggedIn, fetchChartData } = require('./middleware'); // Import the CadetregSchema from your schema file
-
+require('dotenv').config();
+const MONGODB_CONNECTION_URI = process.env.MONGODB_CONNECTION_URI;
 
 const app = express();
 
